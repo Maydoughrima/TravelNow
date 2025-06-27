@@ -1,0 +1,336 @@
+:root {
+  --primary: #faf3e0;
+  --accent: #4ba3c7;
+  --text: #2c2c2c;
+  --hover: #f77f00;
+  --tags: #2e8b57;
+  --neutral:#faf3e1;
+  --darkish:#2c2c3c;
+  --cta-fs: 1.2rem;
+  --links-cta: 1.5rem;
+  --h1: 6rem;
+}
+body.dark {
+  --primary: #121212;
+  --accent: #4ba3c7;
+  --text: #eeeeee;
+  --hover: #ffa94d;
+  --tags: #88c891;
+  --neutral:#faf3e1;
+    --darkish:#2c2c3c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+}
+p,
+a {
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: var(--primary);
+}
+.navbar {
+  padding: 1rem 3rem;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  opacity: 0;
+  transform: translateY(-80px);
+  animation: fadeDown 0.6s ease-in-out forwards;
+  animation-delay: 0.4s;
+}
+.navbar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  opacity: 10%; /* Optional tint */
+  z-index: -1;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-image {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logo-image img {
+  height: 50px;
+  object-fit: contain;
+}
+.logo-image h2 {
+  color: var(--text);
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--text);
+}
+.light-mode {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.light-card a,
+.dark-card a {
+  text-decoration: none;
+}
+.light-card {
+  border: 1px solid var(--accent);
+  padding: 0.6rem 0.6rem;
+  border-radius: 12px;
+}
+.light-card i {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+.dark-card {
+  padding: 0.6rem 0.6rem;
+  border-radius: 12px;
+}
+body.dark .dark-card {
+  background-color: var(--primary); /* darker background */
+  color: var(--primary); /* accent color or highlight */
+}
+.dark-card i {
+  font-size: var(--links-cta);
+  color: var(--text);
+}
+.cta-join {
+  background-color: var(--accent);
+  padding: 10px 30px;
+  border-radius: 30px;
+}
+.cta-join a {
+  text-decoration: none;
+  font-size: var(--cta-fs);
+  color: var(--primary);
+}
+.hamburger {
+  display: none;
+}
+.hamburger i {
+  font-size: var(--links-cta);
+}
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.mobile-menu a {
+  text-decoration: none;
+  font-size: var(--cta-fs);
+  color: var(--text);
+}
+.hero-section {
+  position: relative;
+  height: 100vh;
+
+  /* Set only the image so we can safely change it with JS */
+  background-image: url("assets/images/cali.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+
+  /* Initial hidden state for slide-up entrance */
+  opacity: 0;
+  transform: translateY(900px);
+
+  /* Page load animation */
+
+  /* Add smooth background-image switch for slider */
+  transition: background-image 0.4s ease-in-out;
+}
+
+@keyframes slideUpFadeBg {
+  0% {
+    transform: translateY(900px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.hero-section.animate-in {
+  animation: slideUpFadeBg 0.6s ease-in-out forwards;
+}
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeSide {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-content.fade-out {
+  opacity: 0;
+}
+@keyframes rightSide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* optional */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  top: 40%;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  max-width: 600px;
+  gap: 1rem;
+
+  /* Entrance animation */
+  opacity: 1;
+  transform: translateX(0);
+
+  /* For slider JS */
+  transition: opacity 0.3s ease-in-out;
+}
+.hero-content.animate-fade {
+  animation: fadeSide 1s ease-in-out forwards;
+}
+.hero-content h1 {
+  font-size: var(--h1);
+  line-height: 80px;
+  color: var(--accent);
+}
+.color-change {
+  color: var(--text);
+}
+.hero-content p {
+  color: var(--tags);
+  font-size: 1rem;
+}
+.explore-btn {
+  display: inline-block; /* This is key */
+  background-color: #29a8e2;
+  color: var(--primary);
+  padding: 10px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  width: auto; /* Ensure it's not forced to fill */
+  max-width: 30%;
+  text-align: center;
+  font-weight: 600;
+}
+.sliders {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(100);
+  animation: rightSide 0.8s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+.sliders .left {
+  border: 1px solid var(--accent);
+  padding: 1rem;
+  border-radius: 100%;
+  cursor: pointer;
+  color: var(--neutral);
+  transition: background 0.3s ease;
+  font-size: var(--links-cta);
+}
+.sliders .right {
+  background-color: var(--accent);
+  padding: 1rem;
+  border-radius: 100%;
+  cursor: pointer;
+  color: var(--neutral);
+  transition: background 0.3s ease;
+  font-size: var(--links-cta);
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 769px) {
+  .logo-image h2 {
+    display: none;
+  }
+  .cta-join {
+    padding: 8px 20px;
+  }
+  .cta-join a {
+    font-size: 1rem;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+  .light-card {
+    padding: 0.5rem 0.5rem;
+  }
+  .light-card i,
+  .dark-card i {
+    font-size: 1.2rem;
+  }
+  .dark-card {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 594px) {
+  .nav-links {
+    display: none;
+  }
+  .cta-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}

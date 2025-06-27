@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelNow</title>
+
+    <link rel="stylesheet" href="landing.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo-image">
+          <img src="assets/brand/logo.png" alt="logo-image" />
+          <h2>TravelNow</h2>
+        </div>
+
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Explore</a>
+          <a href="#">Region</a>
+          <a href="#">Stories</a>
+        </div>
+
+        <div class="light-mode">
+          <div class="light-card" id="light-toggle">
+            <a href="#"><i class="ph-bold ph-sun"></i></a>
+          </div>
+          <div class="dark-card" id="dark-toggle">
+            <a href="#"><i class="ph-bold ph-moon"></i></a>
+          </div>
+
+          <div class="cta-nav">
+            <div class="cta-join">
+              <a href="#">Join Us</a>
+            </div>
+          </div>
+
+          <div class="hamburger" id="hamburger">
+            <i class="ph-bold ph-list"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="close-button" id="close-button">
+        <i class="ph-bold ph-x"></i>
+      </button>
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+      <a href="#">Region</a>
+      <a href="#">Stories</a>
+    </div>
+    <main class="hero-container">
+        <section class="hero-section animate-in" id="hero-section">
+            <div class="overlay"></div>
+            <div class="hero-content" id="hero-content">
+                <h1 id="hero-title">Carolina From <span class="color-change">Above</span></h1>
+                <p id="hero-desc">Float gently over vineyards, forests, and valleys — a magical aerial journey through one of the South's most iconic landscapes.</p>
+                <a href="#" class="explore-btn">Explore Now</a>
+            </div>
+            <div class="sliders">
+                <div class="left" id="left-btn"><i class="fa-solid fa-arrow-left"></i></div>
+                <div class="right" id="right-btn"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+        </section>
+    </main>
+    <script src="jvs.js"></script>
+  </body>
+</html>

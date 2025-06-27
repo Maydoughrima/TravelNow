@@ -4,11 +4,14 @@
   --text: #2c2c2c;
   --hover: #f77f00;
   --tags: #2e8b57;
-  --neutral:#faf3e1;
-  --darkish:#2c2c3c;
+  --neutral: #faf3e1;
+  --darkish: #2c2c3c;
   --cta-fs: 1.2rem;
   --links-cta: 1.5rem;
   --h1: 6rem;
+  --h2: 3rem;
+  --h3: 2rem;
+  --card:#FAFAFA;
 }
 body.dark {
   --primary: #121212;
@@ -16,8 +19,9 @@ body.dark {
   --text: #eeeeee;
   --hover: #ffa94d;
   --tags: #88c891;
-  --neutral:#faf3e1;
-    --darkish:#2c2c3c;
+  --neutral: #faf3e1;
+  --darkish: #2c2c3c;
+  --card:#3A3A3A;
 }
 
 * {
@@ -78,7 +82,7 @@ body {
   object-fit: contain;
 }
 .logo-image h2 {
-  color: var(--text);
+  color: var(--accent);
 }
 .nav-links {
   display: flex;
@@ -88,6 +92,12 @@ body {
   text-decoration: none;
   font-size: 1rem;
   color: var(--text);
+  transition: all 0.3s ease-out;
+  font-weight: 500;
+}
+.nav-links a:hover{
+  transform: scale(1.05);
+  color: var(--hover);
 }
 .light-mode {
   display: flex;
@@ -224,14 +234,22 @@ body.dark .dark-card {
   flex-direction: column;
   z-index: 2;
   max-width: 600px;
+  height: max-content;
+  padding: 2rem 2rem;
   gap: 1rem;
-
   /* Entrance animation */
   opacity: 1;
   transform: translateX(0);
-
   /* For slider JS */
   transition: opacity 0.3s ease-in-out;
+
+  /* Glassmorphism */
+  background: rgba(250, 243, 224, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Frosted blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Soft border */
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Depth effect */
 }
 .hero-content.animate-fade {
   animation: fadeSide 1s ease-in-out forwards;
@@ -245,7 +263,7 @@ body.dark .dark-card {
   color: var(--text);
 }
 .hero-content p {
-  color: var(--tags);
+  color: var(--neutral);
   font-size: 1rem;
 }
 .explore-btn {
@@ -265,7 +283,7 @@ body.dark .dark-card {
 .sliders {
   position: absolute;
   bottom: 2rem;
-  right: 2rem;
+  right: 5rem;
   display: flex;
   gap: 1rem;
   z-index: 3;
@@ -277,13 +295,16 @@ body.dark .dark-card {
 }
 
 .sliders .left {
-  border: 1px solid var(--accent);
+  border: 1px solid var(--text);
   padding: 1rem;
   border-radius: 100%;
   cursor: pointer;
   color: var(--neutral);
   transition: background 0.3s ease;
   font-size: var(--links-cta);
+}
+body.dark .left {
+  border: 1px solid var(--text); /* accent color or highlight */
 }
 .sliders .right {
   background-color: var(--accent);
@@ -295,6 +316,91 @@ body.dark .dark-card {
   font-size: var(--links-cta);
 }
 
+/*TOP-VISITED CSS*/
+.Top-Visited{
+  padding: 1rem 3rem;
+}
+.top-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.top-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.top-header h2{
+  font-size: var(--h2);
+  color: var(--text);
+  margin-bottom: -5px;
+}
+.top-header p{
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 60%;
+}
+.t-cards-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.3rem;
+  width: 100%;
+  justify-content: center;
+}
+.card-top{
+  flex: 0 0 auto;
+  width: 434px;
+  background-color: var(--card);
+  gap: 5rem;
+  border-radius: 20px;
+}
+.card-image{
+  position: relative;
+  height: 191px;
+  border-radius: 20px;
+}
+.card-image img{
+  object-fit: contain;
+  border-radius: 20px 20px 0px 0px;
+}
+.fav-icon{
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-size: 1.5rem;
+  padding: 0.50rem;
+  color: var(--tags);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.20rem;
+}
+.card-top-contents{
+  display: flex;
+  flex-direction: column;
+  gap: 0.60rem;
+  padding: 1rem 1rem 1.5rem 1rem;
+}
+.card-name{
+  font-size: var(--h3);
+}
+.card-desc{
+  font-size: 1rem;
+  color: var(--tags);
+}
+.cta-card{
+  display: inline-block;
+  width: max-content;
+  padding: 10px 10px;
+  text-decoration: none;
+  background-color: var(--accent);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
 @media (max-width: 1024px) {
 }
 
@@ -321,6 +427,36 @@ body.dark .dark-card {
   .dark-card {
     padding: 0.5rem 0.5rem;
   }
+  .hero-content {
+    left: 6%;
+    max-width: 500px;
+    gap: 0.8rem;
+    padding: 2rem 2rem;
+  }
+  .hero-content h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  .explore-btn {
+    max-width: 30%;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+  .sliders {
+    bottom: 1rem;
+    right: 2.2rem;
+  }
+  .sliders .left {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  .sliders .right {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 594px) {
@@ -332,5 +468,104 @@ body.dark .dark-card {
   }
   .hamburger {
     display: block;
+  }
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--primary);
+    z-index: 999;
+    padding: 2rem 2rem;
+    gap: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .mobile-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 9999;
+  }
+
+  .mobile-menu a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .close-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+    color: var(--accent);
+  }
+}
+@media (max-width: 568px) {
+  .hero-content {
+    max-width: 380px;
+  }
+  .explore-btn {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 425px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .hero-content {
+    top: 30%;
+    left: 1%;
+    max-width: 340px;
+    background: none;
+    border: none;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 0.7rem;
+  }
+  .explore-btn {
+    padding: 8px 12px;
+    max-width: 45%;
+  }
+  .sliders {
+    bottom: 1rem;
+    right: 2.2rem;
+  }
+  .sliders .left {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+  }
+  .sliders .right {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+  }
+  .hero-section {
+    height: 400px;
+  }
+}
+@media (max-width: 321px) {
+  .hero-content {
+    max-width: 290px;
+  }
+  .explore-btn {
+    max-width: 50%;
+    font-size: 0.7rem;
   }
 }

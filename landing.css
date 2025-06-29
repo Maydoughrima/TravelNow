@@ -318,7 +318,7 @@ body.dark .left {
 
 /*TOP-VISITED CSS*/
 .Top-Visited {
-  padding: 1rem 3rem;
+  padding: 2rem 3rem;
 }
 .top-container {
   display: flex;
@@ -379,12 +379,12 @@ body.dark .left {
   animation: left-mid 0.4s ease-in-out forwards;
   animation-delay: 0.4s;
 }
-.card-top-2{
+.card-top-2 {
   animation: bottom-mid 0.4s ease-in-out forwards;
   animation-delay: 0.8s;
   transform: translateY(400px);
 }
-.card-top-3{
+.card-top-3 {
   animation: right-mid 0.4s ease-in-out forwards;
   animation-delay: 0.16s;
   transform: translateX(1000px);
@@ -461,6 +461,104 @@ body.dark .card-name {
 .hamburger i {
   color: var(--text);
 }
+/*REGIONS*/
+.region-section {
+  padding: 2rem 3rem;
+}
+.reg-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.reg-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reg-header h2 {
+  color: var(--text);
+  font-size: var(--h2);
+  margin-bottom: -5px;
+}
+.reg-header p {
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 60%;
+}
+.reg-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  height: 600px;
+}
+.card-1 {
+  grid-column: 1/2;
+  grid-row: 1/4;
+}
+.card-2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.card-3 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.card-4 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.card-5 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+.card-6 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+.card-reg-img {
+  width: 100%;
+  height: 100%;
+}
+.card-reg-img img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card-reg-desc {
+  position: absolute;
+  color: var(--neutral);
+  top: 70%;
+  left: 5%;
+  font-size: var(--h2);
+  font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+.card-reg-desc-na {
+  position: absolute;
+  color: var(--neutral);
+  top: 90%;
+  left: 5%;
+  font-size: var(--h2);
+  font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+.card-reg-desc-sa {
+  position: absolute;
+  color: var(--neutral);
+  top: 85%;
+  left: 5%;
+  font-size: var(--h2);
+  font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+
 @media (max-width: 1024px) {
   .t-cards-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
@@ -520,6 +618,32 @@ body.dark .card-name {
     padding: 0.8rem;
     font-size: 1rem;
   }
+  .card-reg-desc {
+  position: absolute;
+  color: var(--neutral);
+  top: 80%;
+  left: 3%;
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+.card-reg-desc-na {
+  position: absolute;
+  color: var(--neutral);
+  top: 93%;
+  left: 3%;
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+.card-reg-desc-sa {
+  position: absolute;
+  color: var(--neutral);
+  top: 90%;
+  left: 3%;
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+}
 }
 
 @media (max-width: 594px) {
@@ -608,6 +732,71 @@ body.dark .card-name {
   .fav-icon {
     font-size: 0.8rem;
   }
+  .region-section {
+    padding: 1rem 2rem;
+  }
+  .reg-cards-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+  }
+  .card-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .card-2{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .card-3{
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .card-4{
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .card-5{
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .card-6{
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+  .card-reg-desc {
+  position: absolute;
+  color: var(--neutral);
+  top: 70%;
+  left: 5%;
+  font-size: 1.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+.card-reg-desc-na {
+  position: absolute;
+  color: var(--neutral);
+  top: 70%;
+  left: 5%;
+  font-size: 1.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+.card-reg-desc-sa {
+  position: absolute;
+  color: var(--neutral);
+  top: 70%;
+  left: 5%;
+  font-size: 1.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+.reg-header h2{
+  font-size: 1.5rem;
+}
+.reg-header p{
+  font-size: 0.7rem;
+}
 }
 
 @media (max-width: 425px) {

@@ -102,3 +102,4 @@ closeMenu.addEventListener('click', () => {
   mobileMenu.classList.remove('active');
   document.body.classList.remove('no-scroll');
 });
+

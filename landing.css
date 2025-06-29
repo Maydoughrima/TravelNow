@@ -392,6 +392,9 @@ body.dark .left {
 .card-name{
   font-size: var(--h3);
 }
+body.dark .card-name{
+  color: var(--neutral);
+}
 .card-desc{
   font-size: 1rem;
   color: var(--tags);
@@ -527,6 +530,33 @@ body.dark .left {
   .explore-btn {
     max-width: 50%;
   }
+    .Top-Visited{
+    padding: 1rem 2rem;
+  }
+  .t-cards-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .top-header h2{
+    font-size: 1.5rem;
+  }
+  .top-header p{
+    font-size: 0.7rem;
+  }
+  .card-name{
+    font-size: 1.3rem;
+  }
+  .card-desc{
+    font-size: 0.7rem;
+  }
+  .card-top{
+    gap: 0.80rem;
+  }
+  .card-top-contents{
+    padding: 0.80rem 0.80rem 1rem 0.80rem;
+  }
+  .fav-icon{
+    font-size: 0.80rem;
+  }
 }
 
 @media (max-width: 425px) {
@@ -540,10 +570,6 @@ body.dark .left {
     top: 30%;
     left: 1%;
     max-width: 340px;
-    background: none;
-    border: none;
-    backdrop-filter: none;
-    box-shadow: none;
   }
   .hero-content h1 {
     font-size: 2.5rem;
@@ -567,6 +593,30 @@ body.dark .left {
   .sliders .right {
     padding: 0.8rem;
     font-size: 0.8rem;
+  }
+  .Top-Visited{
+    padding: 1rem 2rem;
+  }
+  .t-cards-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .top-header h2{
+    font-size: 1.5rem;
+  }
+  .top-header p{
+    font-size: 0.7rem;
+  }
+  .card-name{
+    font-size: 1.3rem;
+  }
+  .card-desc{
+    font-size: 0.7rem;
+  }
+  .card-top{
+    gap: 0.80rem;
+  }
+  .card-top-contents{
+    padding: 0.80rem 0.80rem 1rem 0.80rem;
   }
 }
 @media (max-width: 321px) {

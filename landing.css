@@ -410,6 +410,9 @@ body.dark .card-name{
   font-weight: 500;
   border-radius: 8px;
 }
+.hamburger i {
+  color: var(--text);
+}
 @media (max-width: 1024px) {
   .t-cards-container{
     grid-template-columns: repeat(2, 1fr); /* 2 columns */

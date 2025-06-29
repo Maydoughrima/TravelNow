@@ -342,17 +342,21 @@ body.dark .left {
   opacity: 60%;
 }
 .t-cards-container{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.3rem;
-  width: 100%;
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1.5rem;
+  max-width: 1200px;
   justify-content: center;
+  margin: 0 auto;
 }
-.card-top{
-  flex: 0 0 auto;
-  width: 434px;
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%; /* ✅ let it fill its grid cell */
+  max-width: 100%; /* optional: to avoid oversized cards on huge screens */
   background-color: var(--card);
-  gap: 5rem;
   border-radius: 20px;
 }
 .card-image{
@@ -361,7 +365,9 @@ body.dark .left {
   border-radius: 20px;
 }
 .card-image img{
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 20px 20px 0px 0px;
 }
 .fav-icon{
@@ -402,6 +408,9 @@ body.dark .left {
   border-radius: 8px;
 }
 @media (max-width: 1024px) {
+  .t-cards-container{
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
 }
 
 @media (max-width: 769px) {
@@ -555,9 +564,6 @@ body.dark .left {
   .sliders .right {
     padding: 0.8rem;
     font-size: 0.8rem;
-  }
-  .hero-section {
-    height: 400px;
   }
 }
 @media (max-width: 321px) {

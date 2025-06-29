@@ -533,6 +533,9 @@ body.dark .left {
   .navbar {
     padding: 1rem 2rem;
   }
+  .logo-image img{
+    height: 30px;
+  }
   .hero-content {
     top: 30%;
     left: 1%;

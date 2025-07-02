@@ -291,6 +291,11 @@ body.dark .dark-card {
   max-width: 30%;
   text-align: center;
   font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.explore-btn:hover {
+  background-color: var(--hover);
+  color: var(--primary);
 }
 .sliders {
   position: absolute;
@@ -622,7 +627,248 @@ body.dark .card-name {
   color: var(--text);
   opacity: 60%;
 }
+/* Gallery */
+.gallery-section {
+  padding: 2rem 3rem;
+}
+.gallery-container{
+  display: flex;
+  flex-direction:column;
+  gap: 1rem;
+}
+.gallery-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-header h2{
+  font-size: var(--h2);
+  color: var(--text);
+  margin-bottom: -5px;
+}
+.gallery-header p{
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 60%;
+}
+.gallery-cards-container{
+  display: flex;
+  gap: 0.50rem;
+  overflow-x: auto;
+  overflow-y: hidden;
 
+  scroll-behavior: smooth;
+}
+.gallery-cards-container::-webkit-scrollbar {
+  height: 8px; /* horizontal scrollbar height */
+}
+
+.gallery-cards-container::-webkit-scrollbar-track {
+  background: none; /* track color */
+  border-radius: 4px;
+}
+.gallery-cards-container::-webkit-scrollbar-thumb {
+  background-color: var(--tags); /* scroll thumb color */
+  opacity: 80%;
+  border-radius: 4px;
+  border: 2px solid #e0e0e0; /* creates a little gap */
+}
+
+.gallery-cards-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tags); /* darker on hover */
+  opacity: 100%;
+}
+.gal-card{
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  width: 320px; /* Fixed width for each card */
+  height: 365px; /* Fixed height for each card */
+  box-shadow: var(--box);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  position: relative;
+}
+.gal-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal-user-name{
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  color: var(--neutral);
+}
+/*Updates*/
+.updates-section {
+  padding: 2rem 3rem;
+}
+.updates-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.updates-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.updates-header h2{
+  font-size: var(--h2);
+  color: var(--text);
+  margin-bottom: -5px;
+}
+.updates-header p{
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 60%;
+  text-align: center;
+}
+.updates-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* FORM CONTAINER STYLES */
+.forms {
+  display: flex;
+  flex-direction: column;
+  max-width: 570px;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* FORM STRUCTURE */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUT FIELD STYLES */
+.forms input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.5rem;
+  border-radius: 14px;
+  border: none;
+  color: var(--text);
+  background-color: var(--neutral-bg, #f5f5f5); /* Optional default bg */
+}
+
+/* LABEL STYLES */
+.forms label {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--tags);
+}
+
+/* PASSWORD WRAPPER FOR ICON POSITIONING */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* ICON STYLING INSIDE PASSWORD INPUT */
+.password-wrapper i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-75%);
+  cursor: pointer;
+  color: var(--tags);
+  font-size: 1rem;
+  z-index: 2;
+  line-height: 1;
+}
+
+/* MAKE ROOM FOR ICON INSIDE INPUT */
+.password-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-right: 2.5rem; /* room for the icon */
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 14px;
+  border: none;
+  background-color: #f5f5f5;
+  color: var(--text);
+  align-items: center;
+}
+
+.sub-cta{
+  text-align: start;
+  padding: 10px 30px;
+  width: auto;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+  background-color: var(--accent);
+  border: none;
+  border-radius: 99px;
+  box-shadow: var(--box);
+  transition: background-color 0.3s ease;
+}
+.sub-cta:hover {
+  background-color: var(--hover);
+  color: var(--primary);
+}
+.sub-cta a{
+  text-decoration: none;
+}
+/*Footer*/
+.footer-section{
+  padding: 2rem 3rem;
+  background-color: var(--text);
+}
+.footer-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer-contents{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.sub-links{
+  list-style-type: none;
+}
+.sub-links a{
+  text-decoration: none;
+  color: var(--neutral);
+}
+.left-footer{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+}
+.middle-footer{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.right-footer{
+  grid-column: 3/4;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+}
+.bottom-footer{
+  display: flex;
+  gap: 4rem;
+}
+.sub-links{
+  display: flex;
+
+}
 @media (max-width: 1024px) {
   .t-cards-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
@@ -904,7 +1150,7 @@ body.dark .card-name {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 428px) {
   .navbar {
     padding: 1rem 2rem;
   }
@@ -971,9 +1217,12 @@ body.dark .card-name {
  }
   .testimonial-header h2{
     font-size: 1.5rem;
+    line-height: 1.5rem;
   }
   .testimonial-header p{
     font-size: 0.7rem;
+    margin-top: 5px;
+    text-align: center;
   }
   .test-card{
     padding: 1rem 1.5rem;
@@ -994,6 +1243,51 @@ body.dark .card-name {
   }
   .user-place p{
     font-size: 0.6rem;
+  }
+  .gallery-section{
+    padding: 1rem 2rem;
+  }
+  .gallery-header h2{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .gallery-header p{
+    font-size: 0.7rem;
+    margin-top: 5px;
+    text-align: center;
+  }
+  .gallery-cards-container{
+    gap: 0.40rem;
+  }
+  .gal-card{
+    width: 190px; /* Fixed width for each card */
+    height: 220px; /* Fixed height for each card */
+  }
+  .gal-user-name{
+    top: 80%;
+    font-size: 0.70rem;
+  }
+  .updates-section{
+    padding: 1rem 2rem;
+  }
+  .updates-header h2{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .updates-header p{
+    font-size: 0.7rem;
+    margin-top: 5px;
+    text-align: center;
+  }
+  .forms label{
+    font-size: 0.8rem;
+  }
+  .forms input {
+    font-size: 0.8rem;
+  }
+  .sub-cta {
+    padding: 6px 10px;
+    font-size: 0.8rem;
   }
 }
 @media (max-width: 321px) {

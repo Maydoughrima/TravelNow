@@ -103,3 +103,17 @@ closeMenu.addEventListener('click', () => {
   document.body.classList.remove('no-scroll');
 });
 
+
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordInput = document.getElementById('password');
+
+  togglePassword.addEventListener('click', () => {
+    const isHidden = passwordInput.type === 'password';
+    
+    // Toggle input type
+    passwordInput.type = isHidden ? 'text' : 'password';
+
+    // Toggle icon class
+    togglePassword.classList.toggle('fa-eye');
+    togglePassword.classList.toggle('fa-eye-slash');
+  });
